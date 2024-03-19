@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Restaurant Picker</h1>
+<p>Tap the button to get a random restaurant recommendation:</p>
+
+<button onclick="myFunction()">Tap Me</button>
+
+<h1 id="rest"></p>
+
+<script>
+
+function getRandomItem(arr) {
+  // Check if the argument is an array
+  if (!Array.isArray(arr)) {
+    throw new TypeError('Argument must be an array');
+  }
+
+  // Get a random index between 0 and the array length (exclusive)
+  const randomIndex = Math.floor(Math.random() * arr.length);
+
+  // Return the item at the random index
+  return arr[randomIndex];
+}
+
+const restaurants = ['Enssaro','Sushi & More','Texas Roadhouse','Elios','Togos','Panda Express','Little Joes Express','Trabocco','Anna Rosas','La Penca Azul','Five Spiced Kitchen','Crogans','Speisekammer','Brendas','Trueburger','Saigon 2','Ramen Shop','Marafuku','BurgerIM','Belotti Ristorante','Weinerschnitzel','Factor','Ohgane Alameda','Drakes Dealership','Zacharys','Rodericks BBQ','Monkey Thai','Toomies','D T Dim Sum & Tea','Flippers Burgers','Himalayan Curry House'];
+
+function myFunction() {
+  document.getElementById("rest").innerHTML = getRandomItem(restaurants) ;
+}
+
+</script>
+
+</body>
+</html>
